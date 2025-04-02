@@ -7,4 +7,3 @@ werkzeug
 google-generativeai
 gTTS
 pytest
-pygame
