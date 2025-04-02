@@ -98,8 +98,7 @@ def audio_analysis():
    result = request.form.get("result")
    filename = request.form.get("file")
    shape = request.form.get("shape")
-   audio = googleTTS.textToSpeech(result,filename)
-   pygame.mixer.init()
-   pygame.mixer.music.load(audio)
-   pygame.mixer.music.play()
-   return render_template('Shapes.html', filename=shape, result=result)
+   
+   # Use googleTTS to generate the audio file
+   audio_file = googleTTS.textToSpeech(result, filename)
+   return render_template('shapes.html', filename=shape, result=result, audio_url=audio_file)
