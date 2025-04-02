@@ -2,7 +2,8 @@ from flask import Flask
 import os
 
 def create_app():
-    app = Flask(__name__, template_folder='website/templates') 
+    # Correct the path to templates, relative to the website folder
+    app = Flask(__name__, template_folder=os.path.join(os.path.dirname(__file__), 'templates'))
     app.config['SECRET_KEY'] = 'testWebsite!'
 
     from .views import views
